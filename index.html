@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Objetos</title>
+  <style media="screen">
+
+    #container{
+      margin: 10px; padding: 10px;
+    }
+  </style>
+</head>
+<body>
+<div id="container">
+  <h1>Objetos y Arreglos con JavaScript.</h1>
+</div>
+</body>
+<script type="text/javascript">
+
+var alphas;
+alphas=["1","2","3","4"]
+document.write("<p>Imprimiendo la posición de un arreglo</p>")
+document.write(alphas[0]);
+document.write("<br/>")
+document.write(alphas[3]);
+document.write("<br/>")
+document.write("<br/>")
+
+
+  function persona(nombre, edad) {//Función constructora que tiene dos parametros sin valor
+    this.nombre = nombre; //el this es para decir que estamos accediendo a esa información
+    this.edad = edad;
+    this.añonac = nacimiento;
+  }
+  function nacimiento() {
+    var año = 2017 - this.edad;
+    return año;
+  }
+//Crearemos una nueva instancia de objeto
+    var lili = new persona("Liliana",23);
+    var jose = new persona("Jose",30);
+    document.write('Año de nacimiento: '+lili.añonac()); //Manera de imprimir un objeto en el documento HTML
+    document.write("<br/>");
+
+    var myObj = new Object();
+    myObj.nom = "Liliana Sánchez";
+    myObj.ed = 23;
+
+    myObj.getAge =
+        function () {
+            return this.ed;
+        };
+
+    document.write('Nombre: '+myObj.nom);
+    document.write("<br/>");
+    document.write('Edad: '+myObj.ed);
+    document.write("<br/>");
+    //document.write(myObj.getAge());
+
+//objetos con arreglos
+
+    var myArray = new Array(3);
+
+    for(var i = 1; i <= 17; i++) {
+    myArray[i] = new Date(2000 + i, 1, 1);
+    }
+    document.write("<p>Ejemplo como crear una secuencia de años con un arreglo: <p/>");
+
+    myArray.forEach(function (item) {
+
+    document.write(item.getFullYear());
+    document.write("<br/>");
+    });
+
+//Multiplicacion con arreglos
+
+var iMaxNum = 5;
+var Multi = new Array(iMaxNum + 1);
+for ( var i = 1; i <= iMaxNum; i++){
+    Multi[i] = new Array(iMaxNum + 1);
+    // Fill the row with the results of the multiplication
+    for ( var j = 1; j <= iMaxNum; j++){
+        Multi[i][j] = i * j;
+    }
+
+}
+document.write("<p>Ejemplo como crear una multiplicación con un arreglo: <p/>");
+
+document.write(Multi[3][4]);
+document.write("<br/>");
+document.write(Multi[5][2]);
+document.write("<br/>");
+document.write(Multi[1][4]);
+
+
+
+</script>
+</html>
